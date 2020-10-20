@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<section id="about" class="about">
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-lg-5 align-items-stretch video-box" style='background-image: url({% static "site-static/img/about.jpg" %});'>
+          <a href="https://www.youtube.com/watch?v=tJlzIJaokVY" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+        </div>
+
+        <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+            <h1 class="itallic">{{about.title}}</h1>
+            <p>{{about.content}}</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= Whu Us Section ======= -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why choose <span>Our Restaurant</span></h2>
+        <p>Do you want Delicious food, good mood and a smile on your face?</p>
+      </div>
+
+      <div class="row">
+
+        {% for info in why_choose_us %}
+        <div class="col-lg-4">
+          <div class="box">
+            <span>01</span>
+            <h4>{{info.title}}</h4>
+            <p>{{info.content}}</p>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section><!-- End Whu Us Section -->
+
+  <section id="chefs" class="chefs">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Proffesional <span>Chefs</span></h2>
+        <p>Our expert team, bringing you the wonderful meals you deserve</p>
+      </div>
+
+      <div class="row">
+
+        {% for one in chef %}
+        <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="{{one.image.url}}" class="img-fluid" alt=""></div>
+                <div class="member-info">
+                  <h4>{{one.name}}</h4>
+                  <span>{{one.title}}</span>
+                  <h4>{{one.bio}}</h4>
+                  <div class="social">
+                    <a href=""><i class="icofont-twitter"></i></a>
+                    <a href=""><i class="icofont-facebook"></i></a>
+                    <a href=""><i class="icofont-instagram"></i></a>
+                    <a href=""><i class="icofont-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+          </div>
+    
+        {% endfor %}
+
+       
+      </div>
+
+    </div>
+  </section><!-- End Chefs Section -->
+
+  {% endblock body %}
