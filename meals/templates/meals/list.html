@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<main id="main">
+    <section id="menu" class="menu">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Check out our tasty <span>Menu</span></h2>
+          </div>
+          
+          <div class="row menu-container">
+            
+            {% for meal in meal_list %}
+            
+            <div class="col-lg-12 menu-item">
+              <div class="menu-content">
+                <a href="{% url 'meals:meal_detail' meal.slug %}">{{meal.name}}</a><span>rs {{meal.price}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{meal.description}}
+              </div>
+            </div>
+
+            {% endfor %}
+  
+          </div>
+  
+        </div>
+    </section><!-- End Menu Section -->
+
+    <section id="specials" class="specials">
+        <div class="container">
+  
+            <div class="section-title">
+                <h2>Check our <span>Specials</span></h2>
+                <p>Specially crafted for your enjoyment</p>
+            </div>
+  
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="nav nav-tabs flex-column">
+                        <li class="nav-item">
+                        <a class="nav-link active show" data-toggle="tab" href="#tab-1">Ribollita</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-2">Saltimbocca</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-3">Torrone</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-4">Bottarga</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab-5">Fiorentina Steak</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9 mt-4 mt-lg-0">
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="tab-1">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Ribollita</h3>
+                                    <p class="font-italic">Traditionally considered as cucina povera, or poor man’s food, the ribollita was created by servants who collected unfinished food, such as bread and vegetables, from their masters before boiling these items in water to make a meal. The origin of this dish gives rise to its name, which translates to mean ‘reboiled’ in English.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'site-static/img/specials-1.jpeg' %}" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-2">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Saltimbocca</h3>
+                                    <p class="font-italic">The dish contains thin slices of veal, topped with salty prosciutto and herb leaves. These ingredients, joined together with a toothpick, are sautéed in a pan until the meat is done. Different varieties of meat, such as chicken and mutton are also used for preparing the saltimbocca. A well-made serving of saltimbocca promises to be a delectable dish melts away in the mouth.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="{% static 'site-static/img/specials-2.jpeg' %}" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                            <div class="tab-pane" id="tab-3">
+                                <div class="row">
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                        <h3>Torrone</h3>
+                                        <p class="font-italic">Creamy and sticky, the Torrone is made with ingredients such as honey, egg whites, toasted nuts and citrus zest. Thick slabs of this candy are commonly found in cafes and candy stores throughout Italy.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                                        <img src="{% static 'site-static/img/specials-3.jpeg' %}" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab-4">
+                                <div class="row">
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                        <h3>Bottarga</h3>
+                                        <p class="font-italic">Smoked eggs from the rat of the sea. Wait, what? Don’t be put off by this rough description on an Italian delicacy because the other way to describe bottarga is “Sicilian Caviar”. when sliced and eaten or grated over pasta, blossoms into a gloriously savory, smoky, and briny bouquet.</p>
+                                    </div>
+                                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                                        <img src="{% static 'site-static/img/specials-a.jpg' %}" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="tab-pane" id="tab-5">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Fiorentina Steak</h3>
+                                    <p class="font-italic">A bistecca fiorentina, or Florentine T-bone steak, covers all of the characteristics of Italy’s best dishes: a specific cut of meat from a specific cow prepared in a very specific way all within the confines of a specific region.</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="{% static 'site-static/img/specials-b.jpg' %}" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Specials Section -->
+
+</main>
+
+{% endblock body %}
+

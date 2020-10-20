@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<main id="main">
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="col-lg-12 menu-item">
+              <div class="h3" style="color: chocolate;">
+                <span><b><i>{{meal_detail.name}}</i></b></span>
+              </div>
+              <div class="h4">
+                {{meal_detail.description}}
+              </div>
+              <div class="h4"> Price: rs.{{meal_detail.price}}
+              </div>
+              <div class="h4">For: {{meal_detail.people}}
+              </div>
+              <div class="h4">Preperation time: {{meal_detail.preperation_time}} minutes
+              </div>
+            <div class="image">   
+                <img src="{{meal_detail.image.url}}">
+            </div> 
+  
+          </div>
+  
+        </div>
+    </section><!-- End Menu Section -->
+
+{% endblock body %}
